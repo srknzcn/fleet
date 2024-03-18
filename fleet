@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ ! -f "/usr/local/bin/fleet" ]; then
+    curl -LSs "https://download.jetbrains.com/product?code=FLL&release.type=preview&release.type=eap&platform=linux_x64" --output /usr/local/bin/fleet && chmod +x /usr/local/bin/fleet
+fi
+
+fleet launch workspace -- --auth=accept-everyone --publish --enableSmartMode
